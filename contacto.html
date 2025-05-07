@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Contacto - Mundo Anime</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <ul class="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Series</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Contáctanos</h1>
+    <p>¿Tienes recomendaciones o comentarios? ¡Nos encantaría saber de ti!</p>
+
+        <form action="https://formsubmit.co/danielsl.4869@gmail.com" method="POST">
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+          
+            <label for="gmail">Correo electrónico:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+          
+            <label for="mensaje">Mensaje:</label><br>
+            <textarea id="mensaje" name="mensaje" rows="5" required></textarea><br><br>
+          
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="Nuevo mensaje desde Mundo Anime">
+          
+            <button type="submit">Enviar</button>
+          </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
