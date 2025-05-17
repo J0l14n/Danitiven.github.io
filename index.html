@@ -2,36 +2,182 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Inicio - Mundo Anime</title>
-  <!-- Vinculación del archivo de estilos -->
+  <title id="pageTitle">Inicio - Mundo Anime</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    cambiarPagina('inicio');
+  });
+</script>
 <body>
-  <!-- Navegación principal con botones en horizontal -->
+  <div id="tsparticles"></div>
+
   <nav>
-    <ul class="menu">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="servicios.html">Series</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 0 2rem;">
+      <ul class="menu">
+        <li><a href="#inicio" onclick="cambiarPagina('inicio')" id="navInicio">Inicio</a></li>
+        <li><a href="#series" onclick="cambiarPagina('series')" id="navSeries">Series</a></li>
+        <li><a href="#recomendados" onclick="cambiarPagina('recomendados')" id="navRecomendados">Recomendados</a></li>
+        <li><a href="#contacto" onclick="cambiarPagina('contacto')" id="navContacto">Contacto</a></li>
+      </ul>
+      <div style="display: flex; gap: 1rem;">
+        <button id="darkModeToggle">Modo Oscuro</button>
+        <select id="language-selector" onchange="changeLanguage()">
+          <option value="es">Español</option>
+          <option value="en">English</option>
+          <option value="jp">日本語</option>
+        </select>
+      </div>
+    </div>
   </nav>
 
   <main>
-    <h1>Bienvenido a Mundo Anime</h1>
-    <p>Descubre tus series favoritas, nuevos lanzamientos y más contenido otaku.</p>
+    <section id="inicio" class="pagina">
+      <h1 id="title">Bienvenido a Mundo Anime</h1>
+      <p id="text">Descubre tus series favoritas, nuevos lanzamientos y más contenido otaku.</p>
+      <p id="text2">Esta página está destinada a personas que les gusta el anime y quieran conocer los gustos de otras personas.</p>
+      <p id="text3">Y recomendar animes variados para la comunidad.</p>
+      <h2 id="topDelMes">Top del Mes</h2>
+      <img src="imagenes/Dragon-ball.jpg" alt="Dragon Ball" class="imagen-servicio">
+      <p id="dragonball1">Dragon Ball es una serie que trae emoción, aventuras, risas y batallas increíbles.</p>
+      <p id="dragonball2">Es una historia de superación personal con varias continuaciones.</p>
+      <p id="dragonball3">Siendo aún el anime más famoso hasta la fecha, no te pierdas sus historias.</p>
+      <img src="imagenes/OnePiece.JPG" alt="One Piece" class="imagen-servicio">
+      <p id="onepiece1">One Piece sigue rompiendo récords con su nueva saga.</p>
+      <p id="onepiece2">Además de sus increíbles personajes y nuevas habilidades.</p>
+      <p id="onepiece3">Es una serie que definitivamente no se pueden perder.</p>
+    </section>
 
-    <!-- Sección destacada del mes -->
-    <section>
-      <h2>Top del Mes</h2>
-      <!-- Imagen representativa de una serie popular -->
-      <img src="imagenes/One-Piece.JPG" alt="One Piece" class="imagen-servicio">
-      <p>One Piece sigue rompiendo récords con su nueva saga.</p>
-      <p>Ademas de sus increibles personajes y nuevas habilidades.</p>
-      <p>es una serie que definitivammente no se pueden perder.</p>
+    <section id="series" class="pagina" style="display:none;">
+      <h2 id="topAnimes">Top 3 Animes Populares (Últimos 3 Meses)</h2>
+      <article>
+        <h3 id="anime1Title">Demon Slayer</h3>
+        <img src="imagenes/demonslayer.jpg" alt="Demon Slayer" class="imagen-servicio">
+        <p id="anime1Desc1">Con una animación impecable, Demon Slayer ha conquistado corazones alrededor del mundo.</p>
+        <p id="anime1Desc2">El cambio de personalidad en Zenitsu ha sorprendido a muchos fans.</p>
+      </article>
+      <article>
+        <h3 id="anime2Title">Jujutsu Kaisen</h3>
+        <img src="imagenes/jujutsu.jpg" alt="Jujutsu Kaisen" class="imagen-servicio">
+        <p id="anime2Desc1">El arco de Shibuya ha mantenido a los espectadores al borde de sus asientos.</p>
+        <p id="anime2Desc2">Tiene personajes muy carismáticos que conectan fácilmente con la audiencia.</p>
+      </article>
+      <article>
+       <h3 id="anime3Title">Frieren</h3>
+       <img src="imagenes/frieren.jpg" alt="Frieren" class="imagen-servicio">
+       <p id="anime3Desc1">Un anime que mezcla fantasía y emociones profundas de forma brillante.</p>
+      </article>
+    </section>
+
+     <article>
+    <h3 id="anime3Title">Frieren: Beyond Journey's End</h3>
+    <img src="imagenes/frieren.jpg" alt="Frieren" class="imagen-servicio">
+    <p id="anime3Desc1">Un anime que mezcla fantasía y emociones profundas, conquistando rápidamente el corazón de la audiencia.</p>
+     </article>
+    </section>
+
+    <section id="recomendados" class="pagina" style="display:none;">
+      <h1 id="recomendadosTitle"> Animes Recomendados</h1>
+      <ul class="recomendados">
+      <li><img src="imagenes/Dragon-ball.jpg" alt="Dragon Ball" class="imagen-servicio">
+        <a href="https://jkanime.net/dragon-ball/" target="_blank"><strong>0. Dragon ball</strong></a><span id="anime0">Una serie que trae emoción, aventuras, risas y batallas increíbles. Es una historia de superación personal, siendo aún el anime más famoso hasta la fecha. No te pierdas sus historias.</span>
+      </li>
+      <li><img src="imagenes/nanatsu.jpg" alt="Nanatsu no Taizai" class="imagen-servicio">
+        <a href="https://jkanime.net/nanatsu-no-taizai" target="_blank"><strong>1. Nanatsu no Taizai (Los Siete Pecados Capitales)</strong></a><span id="anime1">Una serie cargada de aventuras y batallas épicas en un mundo medieval de magia y pecado. Sigue a Meliodas y su grupo de guerreros mientras enfrentan amenazas oscuras para proteger el reino de Liones.</span>
+      </li>
+      <li><img src="imagenes/jinetes.jpg" alt="Los Cuatro Jinetes del Apocalipsis" class="imagen-servicio">
+        <a href="https://jkanime.net/nanatsu-no-taizai-mokushiroku-no-yonkishi" target="_blank"><strong>2. Los Cuatro Jinetes del Apocalipsis</strong></a><span id="anime2">Una secuela que introduce nuevos héroes con poderes heredados, mientras enfrentan una profecía sombría que podría marcar el fin del mundo. Una historia de valentía y legado en expansión.</span>
+      </li>
+      <li><img src="imagenes/deathnote.jpg" alt="Death Note" class="imagen-servicio">
+        <a href="https://jkanime.net/death-note" target="_blank"><strong>3. Death Note</strong></a><span id="anime3">Un thriller psicológico fascinante donde un estudiante obtiene el poder de matar con solo escribir un nombre. Una batalla intelectual entre el bien, el mal y la justicia retorcida.</span>
+      </li>
+      <li><img src="imagenes/aot.jpg" alt="Attack on Titan" class="imagen-servicio">
+        <a href="https://jkanime.net/shingeki-no-kyojin" target="_blank"><strong>4. Attack on Titan</strong></a><span id="anime4">Una historia impactante de supervivencia en un mundo asediado por titanes. Intrigas políticas, traiciones y revelaciones cambian para siempre la lucha por la humanidad.</span>
+      </li>
+      <li><img src="imagenes/jujutsu.jpg" alt="Jujutsu Kaisen" class="imagen-servicio">
+        <a href="https://jkanime.net/jujutsu-kaisen-tv/" target="_blank"><strong>5. Jujutsu Kaisen</strong></a><span id="anime5">Un anime explosivo que combina hechicería, combates espectaculares y una narrativa con profundidad emocional. Yuji Itadori enfrenta maldiciones para salvar vidas.</span>
+      </li>
+      <li><img src="imagenes/onepiece.jpg" alt="One Piece" class="imagen-servicio">
+        <a href="https://jkanime.net/one-piece" target="_blank"><strong>6. One Piece</strong></a><span id="anime6">Un viaje legendario de piratas en busca del tesoro más grande de todos. Personajes entrañables, mundos increíbles y un mensaje eterno de libertad.</span>
+      </li>
+      <li><img src="imagenes/demonslayer.jpg" alt="Demon Slayer" class="imagen-servicio">
+        <a href="https://jkanime.net/kimetsu-no-yaiba" target="_blank"><strong>7. Demon Slayer</strong></a><span id="anime7">Una historia intensa sobre la lucha de Tanjiro contra demonios para salvar a su hermana. Animación de primer nivel, emociones profundas y combates memorables.</span>
+      </li>
+      <li><img src="imagenes/mha.jpg" alt="My Hero Academia" class="imagen-servicio">
+        <a href="https://jkanime.net/boku-no-hero-academia" target="_blank"><strong>8. My Hero Academia</strong></a><span id="anime8">En un mundo de superpoderes, un joven sin dones lucha por convertirse en el héroe número uno. Inspirador y cargado de acción y compañerismo.</span>
+      </li>
+      <li><img src="imagenes/hxh.jpg" alt="Hunter x Hunter" class="imagen-servicio">
+        <a href="https://jkanime.net/hunter-x-hunter" target="_blank"><strong>9. Hunter x Hunter</strong></a><span id="anime9">Una obra maestra de aventuras con tramas complejas, evolución constante de personajes y un enfoque único hacia los vínculos y desafíos humanos.</span>
+      </li>
+      <li><img src="imagenes/chainsaw.jpg" alt="Chainsaw Man" class="imagen-servicio">
+        <a href="https://jkanime.net/chainsaw-man" target="_blank"><strong>10. Chainsaw Man</strong></a><span id="anime10">Violento, caótico y emocionalmente crudo, este anime mezcla terror, humor y existencialismo a través de su carismático protagonista Denji.</span>
+      </li>
+      <li><img src="imagenes/mobpsycho.jpg" alt="Mob Psycho 100" class="imagen-servicio">
+        <a href="https://jkanime.net/mob-psycho-100" target="_blank"><strong>11. Mob Psycho 100</strong></a><span id="anime11">Un anime visualmente dinámico que combina lo sobrenatural con el crecimiento personal, explorando emociones humanas con mucho corazón y comedia.</span>
+      </li>
+      <li><img src="imagenes/Solo-leveling.jpg" alt="solo leveling" class="imagen-servicio">
+        <a href="https://jkanime.net/ore-dake-level-up-na-ken/" target="_blank"><strong>12. Solo leveling</strong></a><span id="anime12">En un mundo de mazmorras y monstruos, Sung Jin-Woo, un cazador de bajo nivel, descubre un sistema secreto que le otorga un poder inimaginable. Su ascenso a la cima es una lucha épica contra criaturas aterradoras y enemigos poderosos, donde se convertirá en el único capaz de salvar a la humanidad.</span>
+      </li>
+      <li><img src="imagenes/bleach.jpg" alt="Bleach" class="imagen-servicio">
+        <a href="https://jkanime.net/bleach/" target="_blank"><strong>13. Bleach</strong></a><span id="anime13">sigue las aventuras de Ichigo Kurosaki, un adolescente que obtiene los poderes de una Shinigami para proteger a su familia de los Hollows, espíritus malignos. Acompañado de sus amigos, Ichigo lucha contra poderosos enemigos en un mundo de acción y misterio, descubriendo secretos sobre su pasado y el destino de los mundos espirituales.</span>
+      </li>
+      </ul>
+    </section>
+
+    <section id="contacto" class="pagina" style="display:none;">
+      <h1 id="contactoTitle">Contáctanos</h1>
+      <p id="contactoText">¿Tienes recomendaciones o comentarios? ¡Nos encantaría saber de ti!</p>
+      <form action="https://formsubmit.co/danielsl.4869@gmail.com" method="POST">
+        <label for="nombre" id="labelNombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+        <label for="email" id="labelEmail">Correo electrónico:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="mensaje" id="labelMensaje">Mensaje:</label><br>
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea><br><br>
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="Nuevo mensaje desde Mundo Anime">
+        <button type="submit" id="btnEnviar">Enviar</button>
+      </form>
     </section>
   </main>
 
-  <!-- Script para redirección usando JS -->
+  <div id="music-controller">
+    <select id="music-selector">
+      <option value="music/music1.mp3">🎵 Li-Fi1</option>
+      <option value="music/music2.mp3">🎶 Lo-Fi2</option>
+      <option value="music/music3.mp3">🔥 Lo-Fi3</option>
+    </select>
+    <button id="toggle-music">♫ Música</button>
+    <audio id="bg-music" loop autoplay>
+      <source src="music/music1.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+  </div>
+
   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.3.0/tsparticles.bundle.min.js"></script>
+<script>
+  function cambiarPagina(id) {
+    // Oculta todas las secciones
+    const secciones = document.querySelectorAll('.pagina');
+    secciones.forEach(seccion => {
+      seccion.style.display = 'none';
+    });
+
+    // Muestra solo la sección seleccionada
+    const activa = document.getElementById(id);
+    if (activa) {
+      activa.style.display = 'block';
+      // Actualiza el título del documento
+      document.title = activa.querySelector("h1, h2, h3")?.textContent + ' - Mundo Anime';
+    }
+  }
+
+  // Al cargar la página, mostrar solo la sección de inicio
+  window.addEventListener('DOMContentLoaded', () => {
+    cambiarPagina('inicio');
+  });
+</script>
 </body>
 </html>
